@@ -1,0 +1,41 @@
+<html>
+    <head><title>Requests</title>
+        <style>
+            .rbox{
+                box-shadow: 0px 0px 5px 0px rgba(82, 63, 105, 0.2);
+                padding-left: 2rem;
+                padding-right: 2rem;
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+                width: 15vw;
+                margin-right: 2rem;
+                border-radius: 1rem;
+            }
+            .box{
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                padding: 0.5rem;
+                
+            
+            }
+        </style>
+    </head>
+    <body>
+        
+            {% for results1 in showreq %}
+                {% csrf_token %}
+                <div class="box">
+                <div class="rbox">
+                    {{ results1.user }}<br>
+                    {{ results1.type }}<br>
+                    {{ results1.qty }}<br>
+                    {{ results1.date }}<br><br>
+                    <button type="submit">Approve</button>
+                    <button type="submit">Reject</button>
+                    <button type="submit">Delete</button>
+                </div>
+            </div>
+            {% endfor %}
+    </body>
+    </html>   

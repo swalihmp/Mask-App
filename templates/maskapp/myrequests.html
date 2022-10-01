@@ -1,0 +1,17 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block rightmenu %}
+    {% csrf_token %}
+
+    {% for results in showreq %}
+                {% csrf_token %}
+                <div class="box">
+                <div class="rbox">
+                    {{ results.type }}<br>
+                    {{ results.qty }}<br>
+                    {{ results.date }}<br>
+                    {{ results.status }}<br>
+                </div>
+            </div>
+            {% endfor %}
+{% endblock %}

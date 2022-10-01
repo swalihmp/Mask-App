@@ -1,0 +1,23 @@
+<html>
+    <head><title>New Mask</title></head>
+<body>
+    <div>
+        <div align="center">
+            <form action="/newmask/" method="post">
+                {% csrf_token %}
+                <p>
+                Type :
+                <input type="text" id="type" name="type" value="{{ type }}"><br>
+                Rate :
+                <input type="text" id="rate" name="rate" value="{{ rate }}"><br>
+                Qty :
+                <input type="text" id="qty" name="qty" value="{{ qty }}"><br>
+                </p>
+                <button type="submit">Save</button>
+            </form>
+            {% for message in messages %} 
+               <h4><p style="color: rgb(250, 6, 6);text-align:center">{{message}}</p></h4>
+            {% endfor %} 
+        </div>
+    </div>
+</body>

@@ -1,0 +1,26 @@
+<html>
+    <head><title>Register</title><head>
+        <body>
+        <div align="center">
+            <form action="/reg/" method="post">
+                {% csrf_token %}
+                <p>
+                Name :
+                <input type="text" id="name" name="name" value="{{ name }}"><br>
+                Gmail :
+                <input type="text" id="gmail" name="gmail" value="{{ gmail }}"><br>
+                Gender :
+                <select id="gender" name="gender" value="{{ gender }}">
+                    <option selected disabled="true">--Select Gender--</option>
+                    <option value="male">Male</option>
+                    <option value="female">female</option>
+                    <option value="others">Others</option>
+                </select><br>
+                Password :
+                <input type="Password" id="password" name="password" value="{{ password }}"><br>
+                </p>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+        </body>
+</html>
